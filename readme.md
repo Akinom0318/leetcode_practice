@@ -11,7 +11,11 @@ Current Progress:
 [DSA Method](https://leetcode.com/problems/split-a-string-into-the-max-number-of-unique-substrings/editorial/#overview)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## last update: 2024/10/22
+=======
+## last update: 2024/10/22
+>>>>>>> 10/22
 =======
 ## last update: 2024/10/22
 >>>>>>> 10/22
