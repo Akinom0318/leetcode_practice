@@ -2,9 +2,9 @@
 
 >The meaning of the repository existence is to track my leetcode progress and make my github active :)
 Current Progress:
-<span style="color:green">Easy: 36</span>
-<span style="color:orange">Medium: 52</span>
-<span style="color:red">Hard: 8</span>
+- <span style="color:green">Easy: 36</span>
+- <span style="color:orange">Medium: 52</span>
+- <span style="color:red">Hard: 8</span>
 
 ~~I don't know why github do not support colorful markdown~~
 
