@@ -1,0 +1,70 @@
+/**
+ * @param {number[][]} items
+ * @param {number[]} queries
+ * @return {number[]}
+ */
+var maximumBeauty = function(items, queries) {
+    function binSearch(array,target){
+        //array is a 2D array
+        if (array.length === 0){
+            ans.push(0);
+            return;
+        }
+        let mid = Math.floor(array.length / 2);
+        console.log(array,target);
+        if(array[mid][0] <= target && ((array[mid + 1] !== undefined && array[mid + 1][0] > target) || mid + 1 >= array.length)){
+            ans.push(array[mid][1]);
+            return;
+        }else if(array[mid][0] <= target){
+            binSearch(array.slice(mid + 1), target);
+        }else if (array[mid][0] > target){
+            binSearch(array.slice(0, mid), target);
+        }
+        return;
+    }
+    
+    let ans = [];
+    items.sort((a,b) => a[0] - b[0]);
+    for (const query of queries){
+        binSearch(items,query);
+    }
+    return ans;
+};
+
+
+// real solutuion
+var maximumBeauty = function(items, queries){
+    items.sort((a, b) => a[0] - b[0]);
+    const beauty = [];
+    let maxBeauty = items[0][1];
+    beauty.push(maxBeauty);
+
+    for (let i = 1; i < items.length; i++) {
+        maxBeauty = Math.max(items[i][1], maxBeauty);
+        beauty.push(maxBeauty);
+    }
+
+    const result = [];
+    for (let query of queries) {
+        let index = binarySearch(items, query);
+        if (index >= 0) {
+            result.push(beauty[index]);
+        } else {
+            result.push(0);
+        }
+    }
+    return result;
+}
+
+function binarySearch(items, query) {
+    let left = 0, right = items.length - 1;
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        if (items[mid][0] <= query) left = mid + 1;
+        else right = mid - 1;
+    }
+    return right;
+}
+let items = [[193,732],[781,962],[864,954],[749,627],[136,746],[478,548],[640,908],[210,799],[567,715],[914,388],[487,853],[533,554],[247,919],[958,150],[193,523],[176,656],[395,469],[763,821],[542,946],[701,676]];
+let queries = [885];
+console.log(maximumBeauty(items,queries));
