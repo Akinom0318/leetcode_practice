@@ -19,10 +19,7 @@ var shortestSubarray = function(nums, targetSum) {
 
     for (let i = 0; i <= n; i++) {
         // Remove indices from the front where the subarray sum meets or exceeds the target
-        while (
-            candidateIndices.length > 0 &&
-            prefixSums[i] - prefixSums[candidateIndices[0]] >= targetSum
-        ) {
+        while (candidateIndices.length > 0 &&prefixSums[i] - prefixSums[candidateIndices[0]] >= targetSum) {
             shortestSubarrayLength = Math.min(
                 shortestSubarrayLength,
                 i - candidateIndices.shift()
@@ -30,10 +27,7 @@ var shortestSubarray = function(nums, targetSum) {
         }
 
         // Maintain monotonicity: remove indices with larger prefix sums from the back
-        while (
-            candidateIndices.length > 0 &&
-            prefixSums[i] <= prefixSums[candidateIndices[candidateIndices.length - 1]]
-        ) {
+        while (candidateIndices.length > 0 && prefixSums[i] <= prefixSums[candidateIndices[candidateIndices.length - 1]]) {
             candidateIndices.pop();
         }
 
