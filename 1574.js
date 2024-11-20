@@ -3,28 +3,51 @@
  * @return {number}
  */
 var findLengthOfShortestSubarray = function(arr) {
-    let n = arr.length;
-    let right = n - 1;
-    while (right > 0 && arr[right - 1] <= arr[right]) {
-        right--;
-    }
-    if (right == 0) {
-        return 0;
-    }
-
-    let res = right;
-    for (let left = 0; left < n; left++) {
-        if (left > 0 && arr[left] < arr[left - 1]) {
+    // check sorted
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
             break;
         }
-        while (right < n && arr[left] > arr[right]) {
-            right++;
+        if (i === arr.length - 2) {
+            return 0;
         }
-        res = Math.min(res, right - left - 1);
     }
+    
+    let n = arr.length;
+    if(n === 1) return 0;
 
-    return res;
+    let prefix = [arr[0]];
+    let suffix = [arr[n - 1]];
+    for (let i = 1; i < n; i++) {
+        if (arr[i] >= prefix[prefix.length - 1]) {
+            prefix.push(arr[i]);
+        } else {
+            break;
+        }
+    }
+    for (let i = n - 2; i >= 0; i--) {
+        if (arr[i] <= suffix[suffix.length - 1]) {
+            suffix.push(arr[i]);
+        } else {
+            break;
+        }
+    }
+    suffix.reverse();
+
+    while (prefix.length && suffix.length && prefix[0] >= suffix[0]) {
+        suffix.shift();
+    }
+    while(prefix.length && suffix.length && prefix[prefix.length - 1] > suffix[0]) {
+        prefix.pop();
+    }
+    //console.log(prefix,suffix)
+    while (prefix.length && suffix.length && prefix[prefix.length - 1] > suffix[0]) {
+        suffix.shift();
+    }
+    //console.log(prefix,suffix)
+
+    return n - prefix.concat(suffix).length;
 };
 
-let arr = [1,2,3];
-console.log(findLengthOfShortestSubarray(arr)); // 8
+let arr = [1,2,3,10,4,2,3,5];
+console.log(findLengthOfShortestSubarray(arr));
