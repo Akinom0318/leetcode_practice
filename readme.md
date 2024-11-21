@@ -10,6 +10,6 @@ Current Progress:
 
 [DSA Method](https://leetcode.com/problems/split-a-string-into-the-max-number-of-unique-substrings/editorial/#overview)
 
-![DSA Road Map](imgs\DSA_road_map.png)
+![DSA Road Map](./imgs/DSA_road_map.png)
 
 ## last update: 2024/11/14
