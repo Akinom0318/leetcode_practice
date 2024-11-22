@@ -12,4 +12,4 @@ Current Progress:
 
 ![DSA Road Map](./imgs/DSA_road_map.png)
 
-## last update: 2024/11/14
+## last update: 2024/11/21
