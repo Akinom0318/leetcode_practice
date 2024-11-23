@@ -2,9 +2,9 @@
 
 >The meaning of the repository existence is to track my leetcode progress and make my github active :)
 Current Progress:
-- <span style="color:green">Easy: 36</span>
-- <span style="color:orange">Medium: 61</span>
-- <span style="color:red">Hard: 9</span>
+- <span style="color:green">Easy: 37</span>
+- <span style="color:orange">Medium: 68</span>
+- <span style="color:red">Hard: 10</span>
 
 ~~I don't know why github do not support colorful markdown~~
 
@@ -12,4 +12,4 @@ Current Progress:
 
 ![DSA Road Map](./imgs/DSA_road_map.png)
 
-## last update: 2024/11/21
+## last update: 2024/11/23
