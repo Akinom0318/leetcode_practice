@@ -3,7 +3,7 @@
 >The meaning of the repository existence is to track my leetcode progress and make my github active :)
 
 
-##Current Progress:
+## Current Progress:
 - <span style="color:green">Easy: 39</span>
 - <span style="color:orange">Medium: 75</span>
 - <span style="color:red">Hard: 14</span>
