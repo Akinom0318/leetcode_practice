@@ -13,4 +13,4 @@ Current Progress:
 [Eulerian Path/Circuit algorithm](https://www.youtube.com/watch?v=8MpoO2zA2l4)
 > This is the last HARD  problem in 2024 November, which requires the Eulerian Path/Circuit algorithm for the most optimal solution.
 
-## last update: 2024/12/4
+## last update: 2024/12/10
