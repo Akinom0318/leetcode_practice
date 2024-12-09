@@ -1,14 +1,10 @@
 # This is my leetcode
 
 >The meaning of the repository existence is to track my leetcode progress and make my github active :)
-
-
-## Current Progress:
+Current Progress:
 - <span style="color:green">Easy: 39</span>
-- <span style="color:orange">Medium: 75</span>
+- <span style="color:orange">Medium: 80</span>
 - <span style="color:red">Hard: 14</span>
-
-*Total 128 problems solved*
 
 [DSA Method](https://leetcode.com/problems/split-a-string-into-the-max-number-of-unique-substrings/editorial/#overview)
 
