@@ -10,6 +10,8 @@ Current Progress:
 
 ![DSA Road Map](./imgs/DSA_road_map.png)
 
+![Constraints and Time Complexity](./imgs/time_complexity.jpg)
+
 [Eulerian Path/Circuit algorithm](https://www.youtube.com/watch?v=8MpoO2zA2l4)
 > This is the last HARD  problem in 2024 November, which requires the Eulerian Path/Circuit algorithm for the most optimal solution.
 
