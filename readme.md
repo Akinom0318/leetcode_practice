@@ -13,4 +13,7 @@ Current Progress:
 [Eulerian Path/Circuit algorithm](https://www.youtube.com/watch?v=8MpoO2zA2l4)
 > This is the last HARD  problem in 2024 November, which requires the Eulerian Path/Circuit algorithm for the most optimal solution.
 
-## last update: 2024/12/23
+[01 BFS](https://cp-algorithms.com/graph/01_bfs.html)
+> This is the first HARD that I encounter with 01 BFS.
+
+## last update: 2025/1/18
