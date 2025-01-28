@@ -5,40 +5,27 @@
  * @return {boolean[]}
  */
 var checkIfPrerequisite = function(numCourses, prerequisites, queries) {
-    let ans = new Array(queries.length).fill(false);
-    let totalPrerequisties = new Array(numCourses).fill([]).map(() => new Array());
-    let startnodes = [];
+    let graph = new Array(numCourses).fill(0).map(() => []);
+    let isPrerequisite = Array.from({ length: numCourses }, () => Array(numCourses).fill(false));
 
-    for (let i = 0; i < prerequisites.length; i++) {
-        let [start, end] = prerequisites[i];
-        totalPrerequisties[end].push(start);
+    for (let [u, v] of prerequisites) {
+        graph[u].push(v);
     }
 
-    for(let i = 0; i < totalPrerequisties.length; i++) {
-       if(totalPrerequisties[i].length === 0) {
-           startnodes.push(i);
-       }
-    }
-
-    while(startnodes.length > 0) {
-        let node = startnodes.shift();
-        for(let i = 0; i < totalPrerequisties.length; i++) {
-            if(totalPrerequisties[i].includes(node)) {
-                totalPrerequisties[i].push(...totalPrerequisties[node]);
-                totalPrerequisties[i] = [...new Set(totalPrerequisties[i])];
-                startnodes.push(i);
+    let dfs = (u, start) => {
+        for (let v of graph[u]) {
+            if (!isPrerequisite[start][v]) {
+                isPrerequisite[start][v] = true;
+                dfs(v, start);
             }
         }
+    };
+
+    for (let i = 0; i < numCourses; i++) {
+        dfs(i, i);
     }
 
-    for(let i = 0; i < queries.length; i++) {
-        let [start, end] = queries[i];
-        if(totalPrerequisties[end].includes(start)) {
-            ans[i] = true;
-        }
-    }
-
-    return ans;
+    return queries.map(([u, v]) => isPrerequisite[u][v]);
 };
 
 let numCourses = 3;
