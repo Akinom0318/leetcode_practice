@@ -1,3 +1,4 @@
+package leetcode_2161;
 
 class Solution {
     public int[] pivotArray(int[] nums, int pivot) {
@@ -7,9 +8,9 @@ class Solution {
         int left = 0;
         int right = n - 1;
 
-        for (int i = 0; i < n; i++){
-            if (nums[i] < pivot){
-                result[left++] = nums[i];
+        for (int num : nums) {
+            if (num < pivot) {
+                result[left++] = num;
             }
         }
 

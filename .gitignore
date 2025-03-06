@@ -3,3 +3,6 @@ test.js
 .vscode
 /node_modules/
 *.class
+*.iml
+.idea/
+out/
