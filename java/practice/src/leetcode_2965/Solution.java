@@ -1,3 +1,5 @@
+package leetcode_2965;
+
 import java.util.*;
 
 class Solution {

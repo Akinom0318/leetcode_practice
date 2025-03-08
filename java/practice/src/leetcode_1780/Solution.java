@@ -1,10 +1,12 @@
+package leetcode_1780;
+
 class Solution {
     public static boolean decimalToTernary(int n){
         while(n > 0){
             if (n % 3 > 1){
                 return  false;
             }
-            n = (int) Math.floor(n / 3);
+            n = (int) Math.floor((double) n / 3);
         }
 
         return true;
@@ -15,7 +17,7 @@ class Solution {
         return decimalToTernary(n);
     }
 
-    public static void main(String args[]){
+    public static void main(String[] args){
         int n = 9;
         System.out.println(checkPowersOfThree(n));
     }

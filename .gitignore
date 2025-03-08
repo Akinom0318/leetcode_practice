@@ -4,4 +4,4 @@ test.js
 /node_modules/
 *.class
 *.iml
-/.idea/
+.idea/
