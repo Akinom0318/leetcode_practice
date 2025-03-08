@@ -11,8 +11,8 @@ var closestPrimes = function(left, right) {
     //console.log(primes);
 
     for (let i = 0; i < primes.length; i++) {
-        if (primes[i] >= left && primes[i] <= right && primes[i - 1] >= left && primes[i - 1] <= right) {
-            if (i > 0 && primes[i] - primes[i - 1] < minDiff) {
+        if (i > 0 && primes[i] >= left && primes[i] <= right && primes[i - 1] >= left && primes[i - 1] <= right) {
+            if ( primes[i] - primes[i - 1] < minDiff) {
                 minDiff = primes[i] - primes[i - 1];
                 result[0] = primes[i - 1];
                 result[1] = primes[i];
