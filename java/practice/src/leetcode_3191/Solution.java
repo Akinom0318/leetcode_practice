@@ -1,3 +1,5 @@
+package leetcode_3191;
+
 class Solution {
     public int minOperations(int[] nums) {
         int left = 0;
