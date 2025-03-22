@@ -1,7 +1,7 @@
 class Union{
     // number of vertices
     constructor(n){
-        this.parent = Array.from({length: n},(_, i) =>ｉ);
+        this.parent = Array.from({length: n},(_, i) =>i);
         this.rank = new Array(n).fill(0);   
     }
 
