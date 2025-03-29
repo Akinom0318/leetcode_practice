@@ -16,4 +16,6 @@ Current Progress:
 [01 BFS](https://cp-algorithms.com/graph/01_bfs.html)
 > This is the first HARD that I encounter with 01 BFS.
 
+[I JUST CANT](https://leetcode.com/problems/apply-operations-to-maximize-score/editorial/?envType=daily-question&envId=2025-03-29)
+
 ## last update: 2025/1/18
