@@ -1,36 +1,34 @@
-/**
- * @param {number} start
- * @param {number} finish
- * @param {number} limit
- * @param {string} s
- * @return {number}
- */
-var numberOfPowerfulInt = function(start, finish, limit, s) {
-    let digits = new Array((finish + "").length).fill(0);
-
-    function helper(s){
-        let numS = parseInt(s, 10);
-        return numS <= finish;
-    }
-
-    digits[s.length - 1] = parseInt(s, 10) >= start && parseInt(s, 10) <= finish ? 1 : 0;
-    while(helper(s) && helper("9" + s)){
-        if(s.length + 1< finish.toString().length){
-            digits[s.length] = digits[s.length - 1] + limit;
-        }else if(s.length + 1 === finish.toString().length){
-            let firstCap = finish.toString()[0];
-            let firstDigit = parseInt(firstCap, 10);
-            console.log(firstDigit)
-            let limitCap = firstDigit > limit ? limit : firstDigit;
-            digits[s.length] = digits[s.length - 1] + limitCap;
-        }
-
-        s = "9" + s;
-    }
-
-    return digits;
-    //return digits[digits.length - 1];
+var numberOfPowerfulInt = function (start, finish, limit, s) {
+    const start_ = (start - 1).toString();
+    const finish_ = finish.toString();
+    return calculate(finish_, s, limit) - calculate(start_, s, limit);
 };
+
+function calculate(x, s, limit) {
+    if (x.length < s.length) {
+        return 0;
+    }
+    if (x.length === s.length) {
+        return x >= s ? 1 : 0;
+    }
+
+    const suffix = x.slice(-s.length);
+    let count = 0;
+    const preLen = x.length - s.length;
+
+    for (let i = 0; i < preLen; i++) {
+        const digit = parseInt(x[i]);
+        if (limit < digit) {
+            count += Math.pow(limit + 1, preLen - i);
+            return count;
+        }
+        count += digit * Math.pow(limit + 1, preLen - 1 - i);
+    }
+    if (suffix >= s) {
+        count++;
+    }
+    return count;
+}
 
 let start = 141;
 let finish = 148;
